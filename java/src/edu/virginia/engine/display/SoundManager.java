@@ -16,12 +16,15 @@ public class SoundManager {
         hm.put("bump", "bump.wav");
         hm.put("win", "win.wav");
         hm.put("loss", "loss.wav");
-        hm.put("marioMusic", "marioMusic.wav");
+        hm.put("xx3", "xx3.wav");
+        hm.put("smwcoin", "smwcoin.wav");
+        hm.put("smwcastleclear", "smwcastleclear.wav");
+        hm.put("smw1up", "smw1up.wav");
 
 
         LoadSoundEffect(id, (String)hm.get(id));
 
-        if(id.equals("marioMusic"))
+        if(id.equals("xx3"))
             PlayMusic(id);
         else
             PlaySoundEffect(id);

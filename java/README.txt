@@ -1,11 +1,21 @@
-LabFourGame:
+Game 4:
+We realized the win condition (star) may be off screen on some displays, so we updated the star position to be on-screen. Sorry for the confusion, please grade this accordingly. Thank you!
 
-In our game, you must navigate Mario to the sun. If he hits an asteroid, you lose 10 points, and if your score goes
-below 0 you lose. All controls from LabOneGame work here (rotating, moving with arrow keys, scaling, etc.). There is
-music playing continuously during the game. There is a soundeffect for when mario hits an asteroid, and another sound
-effect if you lose the game.
+Game 5:
+Core Features:
+ - Arrow keys to move Mario in any direction.
+ - W&Q rotate mario clockwise and counter-clockwise respectively.
+ - A&S make Mario scale up and down respectively.
+ - Z&X make Mario more and less transparent respectively.
+ - IJKL move Mario's pivotPoint like arrow keys.
+ - Mario and other objects with physics (e.g. soccer ball) experience gravity.
+ - Mario takes damage if he collides with some objects (e.g. cactus).
+
+Additional Features:
+ - Mario will accelerate if a given key is held (quickly up to 5x normal speed).
+ - Hold 't' to activate turbo boost; Mario will move really fast.
+ - Mario can push objects with physics (e.g. soccer ball).
+ - A spark effect appears when Mario collides with harmful objects.
 
 
-LabFiveGame:
-
-The rules and controls of our game are the same as in lab four. Our gravity pulls the rocket ship towards the sun (because why not). When mario hits an asteroid, he will bounce away from it. The asteroids do not move because they are way heavier than mario.
+To Note: collision resolution with rotation and scaling is imperfect.

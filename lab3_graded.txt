@@ -1,0 +1,41 @@
+Lab 3: Grading Rubric (100 points)
+
+25 points: Reasonable attempt at implementing all the methods in Part 1 and Part 2
+** 25
+
+25 points: Sun, at least 2 planets and a moon show up on the simulator.
+** 25
+
+5 points: The simulator moves continuously.
+** 5
+
+10 points:
+5 points: There are at least 2 planets orbiting the Sun.
+** 5
+5 points: The planets orbit the Sun at different rates.
+** 5
+
+5 points: There is at least 1 moon that orbits a planet.
+** 5
+
+10 points: 
+5 points: Pressing Q zooms in towards center of sun OR center of current screen position
+** 5
+5 points: Pressing W zooms out towards center of sun OR center of current screen position
+** 5
+
+10 points: 
+Arrows: Pans up/down/left/right around the system.
+2.5 points per arrow
+** 10
+
+10 points: 
+5 points: Pressing A rotates the system around the sun’s center point counterclockwise
+** 5
+5 points: Pressing S rotates the system around the sun’s center point clockwise
+** 5
+
+Extra credit 10 points: At least 1 planet has an elliptical orbit.
+** 10
+
+Total: 110

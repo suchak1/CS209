@@ -1,0 +1,9 @@
+Lab 2: Grading Rubric (100 points)
+
+85 points: At least one animation works
+** 85
+
+15 points: There are animations of different speeds or there is a way to change animation speed.
+** 15
+
+Total: 100

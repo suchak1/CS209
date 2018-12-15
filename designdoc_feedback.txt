@@ -1,0 +1,42 @@
+
+Design Doc Feedback
+
+Basic Game Design
+
+Summarize the game type				5/5
+
+Game description				9/10
+Good, more detailed description. Make sure you include
+the elements described in the game design book such as:
+rules, obstacles, etc.
+
+Justification of element choices		10/10
+
+Engagement with player types			5/5
+Good job related to many player types
+
+Level progression				5/5
+
+BGD Total:					34/35
+
+Full Game Design
+
+UDL						5/5
+Excellent.
+
+Cultural-relevant design			5/5
+Great.
+
+MVP						9/10
+
+Structure it so that you have
+Level 1: Simple level (attic is fine for this)
+Level N: intermediate (this needs to be barely easier than next one)
+Level N+1: intermediate, barely harder than N (Ground floor is fine)
+
+I think that doing full floors as a single "level" might be too hard. How about
+if you just have two rooms for each "level" and show me two levels that are 
+barely harder than each other, at the level of difficulty of the ground floor.
+
+FGD Total:					19/20
+

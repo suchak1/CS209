@@ -1,60 +1,111 @@
 package edu.virginia.engine.display;
 
 import edu.virginia.engine.util.GameClock;
-import edu.virginia.engine.util.GameClock;
-
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class AnimatedSprite extends Sprite {
-
+    ///*
     private ArrayList<Animation> animations;
-    private Boolean playing;
+    private boolean playing;
     private String fileName;
     private ArrayList<BufferedImage> frames;
-    private int currentFrame;
-    private int startFrame;
-    private int endFrame;
-    static final int DEFAULT_ANIMATION_SPEED = 3;
-    private int animationSpeed;
+    private Integer currentFrame;
+    private Integer startFrame;
+    private Integer endFrame;
+    private static final int DEFAULT_ANIMATION_SPEED = 3;
+    private Integer animationSpeed;
     private GameClock gameClock;
     private int frameCount;
-    private Boolean paused;
+    private boolean paused;
 
 
-    public AnimatedSprite(String id, String fn, Point pos) {
+    public AnimatedSprite (String id, String filename, Point position) {
+
         super(id);
-        this.setCount(30);
+        this.setFrameCount(30);
         this.initGameClock();
         this.setId(id);
-        this.setImage(fn);
-        this.setPosition(pos);
+        this.setPosition(position);
+        this.setImage(filename);
         this.setAnimationSpeed(DEFAULT_ANIMATION_SPEED);
-        this.setStartFrame(0);
-        this.setEndFrame(0);
-        this.setCurrentFrame(0);
+        this.startFrame = 0;
+        this.endFrame = 0;
+        this.currentFrame = 0;
         this.frames = new ArrayList<BufferedImage>();
         this.animations = new ArrayList<Animation>();
         this.playing = false;
         this.paused = false;
-
-
+        this.setCount(0);
     }
 
-    public void initGameClock() {
-        if (this.gameClock == null)
-            this.gameClock = new GameClock();
-    }
+    public void setFileName(String str) {this.fileName = str;}
+    public String getFileName() {return this.fileName;}
 
+    public void setStartFrame(int sF) {this.startFrame = sF;}
+    public int getStartFrame() {return this.startFrame;}
+    public void setEndFrame(int eF) {this.endFrame = eF;}
+    public int getEndFrame() {return this.endFrame;}
+    public void setCurrentFrame(int cF) {this.currentFrame = cF;}
+    public int getCurrentFrame() {return this.currentFrame;}
 
-    public void setAnimationSpeed(int spd) {
-        this.animationSpeed = spd;
+    public void setCount(int c) {this.frameCount = c;}
+    public int getCount() {return this.frameCount;}
+
+    public void setPlaying(boolean b) {this.playing = b;}
+    public Boolean getPlaying() {return this.playing;}
+
+    public void setPaused(boolean b) {this.paused = b;}
+    public Boolean getPaused() {return this.paused;}
+
+    public void setAnimationSpeed(int speed) {
+        this.animationSpeed = speed;
     }
 
     public int getAnimationSpeed() {
         return this.animationSpeed;
+    }
+
+    public void configureDialElement(String id, String fn) {
+        if (fn.equals("dial2.png")) {
+            setScaleX(0.5);
+            setScaleY(0.5);
+        } else if (fn.equals("dial3.png") && id.equals("completeDial")) {
+            setScaleX(0.5);
+            setScaleY(0.5);
+        } else if (fn.equals("hawk1.png") && id.equals("match")) {
+            setScaleX(0.05);
+            setScaleY(0.05);
+        } else if (fn.equals("hawk1.png")) {
+            setScaleX(0.03);
+            setScaleY(0.03);
+        } else if (fn.equals("hawk2.png") && id.equals("match")) {
+            setScaleX(0.1);
+            setScaleY(0.1);
+        } else if (fn.equals("hawk2.png")) {
+            setScaleX(0.06);
+            setScaleY(0.06);
+        } else if (fn.equals("butterfly1.png") && id.equals("match")) {
+            setScaleX(0.065);
+            setScaleY(0.065);
+        } else if (fn.equals("butterfly1.png")) {
+            setScaleX(0.04);
+            setScaleY(0.04);
+        } else if (fn.equals("crab1.png") && id.equals("match")) {
+            setScaleX(0.09);
+            setScaleY(0.09);
+        } else if (fn.equals("crab1.png")) {
+            setScaleX(0.05);
+            setScaleY(0.05);
+        } else if (fn.equals("elephant1.png") && id.equals("match")) {
+            setScaleX(0.05);
+            setScaleY(0.05);
+        } else if (fn.equals("elephant1.png")) {
+            setScaleX(0.03);
+            setScaleY(0.03);
+        }
     }
 
     public void addFrame(String imageName) {
@@ -68,11 +119,8 @@ public class AnimatedSprite extends Sprite {
         }
     }
 
-    // getter/setter for animations
-
     public Animation getAnimation(String id){
-        int i;
-        for (i = 0; i < this.animations.size(); i++) {
+        for (int i = 0; i < this.animations.size(); i++) {
             if(animations.get(i).getId().equals(id)) {
                 return animations.get(i);
             }
@@ -80,32 +128,32 @@ public class AnimatedSprite extends Sprite {
         }
         return null;
     }
-
     public void setAnimations(Animation an){
         this.animations.add(an);
     }
 
-    // getters/setters for frames
+    public void setAnimationSpeed(Integer animationSpeed)
+    {
+        this.animationSpeed = animationSpeed;
+    }
 
-    public void setStartFrame(int sF) {this.startFrame = sF;}
-    public int getStartFrame() {return this.startFrame;}
-    public void setEndFrame(int eF) {this.endFrame = eF;}
-    public int getEndFrame() {return this.endFrame;}
-    public void setCurrentFrame(int cF) {this.currentFrame = cF;}
-    public int getCurrentFrame() {return this.currentFrame;}
 
-    public void setCount(int c) {this.frameCount = c;}
-    public int getCount() {return this.frameCount;}
+    /*
+    public void draw()
+    {
+        this.gameClock.resetGameClock();
+    }
+    */
 
-    public void setPlaying(Boolean b) {this.playing = b;}
-    public Boolean getPlaying() {return this.playing;}
+    public void initGameClock() {
+        if (gameClock == null) {
+            this.gameClock = new GameClock();
+        }
+    }//*/
 
-    public void setPaused(Boolean b) {this.paused = b;}
-    public Boolean getPaused() {return this.paused;}
-
-    private void animate(Animation an){
-        this.setStartFrame(an.getStartFrame());
-        this.setEndFrame(an.getEndFrame());
+    private void animate(Animation a){
+        this.setStartFrame(a.getStartFrame());
+        this.setEndFrame(a.getEndFrame());
     }
 
     public void animate(String id) {
@@ -115,13 +163,12 @@ public class AnimatedSprite extends Sprite {
 
 
 
-    public void animate(int st, int end) {
-        this.setStartFrame(st);
+    public void animate(int start, int end) {
+        this.setStartFrame(start);
         this.setEndFrame(end);
     }
 
     public void stopAnimation(int fNum) {
-        // this.playing = false;
         this.setPaused(true);
         this.startFrame = fNum;
     }
@@ -130,49 +177,50 @@ public class AnimatedSprite extends Sprite {
         stopAnimation(this.startFrame);
     }
 
-    public void draw(Graphics g) {
-
-        int sf = this.getStartFrame();
-        int ef = this.getEndFrame();
-        int cf = this.getCurrentFrame();
+    public void draw(Graphics g)
+    {
+        int startFrame = this.getStartFrame();
+        int endFrame = this.getEndFrame();
+        int currentFrame = this.getCurrentFrame();
         BufferedImage frame;
 
-            if (playing == true) {
-                if (super.getFrameCount() == this.animationSpeed) {
+        if (playing == true) {
+            if (super.getFrameCount() == this.animationSpeed) {
 
-                    frame = this.frames.get(cf);
-                    if (cf == ef) {
-                        this.setCurrentFrame(sf - 1);
-                    }
-                    this.setCurrentFrame(this.getCurrentFrame() + 1);
-                    super.setFrameCount(0);
-                } else {
-                    frame = this.frames.get(cf);
+                frame = this.frames.get(currentFrame);
+                if (currentFrame == endFrame) {
+                    this.setCurrentFrame(startFrame - 1);
                 }
-                if(this.getCurrentFrame() == this.getEndFrame()){
-                   setPlaying(false);
-                }
+                this.setCurrentFrame(this.getCurrentFrame() + 1);
+                super.setFrameCount(0);
             } else {
-                frame = getDisplayImage();
+                frame = this.frames.get(currentFrame);
             }
+            if(this.getCurrentFrame() == this.getEndFrame()){
+                setPlaying(false);
+            }
+        } else {
+            frame = getDisplayImage();
+        }
+
         if (frame != null) {
             Graphics2D g2d = (Graphics2D) g;
 
             applyTransformations(g2d);
-			/* Actually draw the image, perform the pivot point translation here */
+            /* Actually draw the image, perform the pivot point translation here */
             if (super.getVisible()) {
                 g2d.drawImage(frame, 0, 0, (int) (getUnscaledWidth()),
                         (int) (getUnscaledHeight()), null);
             }
 
-			/*
-			 * undo the transformations so this doesn't affect other display
-			 * objects
-			 */
+            /*
+             * undo the transformations so this doesn't affect other display
+             * objects
+             */
             reverseTransformations(g2d);
         }
-
-
     }
-}
 
+
+
+}

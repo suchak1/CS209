@@ -1,0 +1,24 @@
+Lab 5: Grading Rubric (50 points)
+
+25 points: Everything in the previous lab still works.
+** 25
+
+10 points: There is gravity in the game:
+Doesn’t need to work for rotation
+** 10
+
+15 points: Collision resolution/ bounciness works well
+** 10 (no bounciness)
+
+Extra Credit:
+5 points per extra physics feature successfully implemented:
+Collision resolution that depends on mass
+Acceleration while moving, instead of constant speed, when you press arrow keys.
+Acceleration while moving if go into turbo speed mode with a button press
+Particles/sparks when collisions occur
+Animations during collisions
+Anything they have in their readme
+Maximum 10 extra credit points
+** 10
+
+Total: 55
